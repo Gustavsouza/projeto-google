@@ -7,12 +7,13 @@
 body{
     background-color: rgb(194, 198, 199);
     color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #interface{
     max-width: 1000px;
     background-color: #ffffff;
     margin: -20px auto 0 auto;
-    padding:20px;
+    padding:10px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.329);
 }
 #icone{
@@ -39,7 +40,27 @@ header#cabecalho h2{
     text-shadow: 1px 1px 1px rgba(0,0,0,.6);
     margin-top: 0px;
 }
+header#cabecalhoartigo h1{
+    font-family: 'FonteLogo';
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    margin-top: 3px;
+}
+header#cabecalhoartigo h2{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin-top: 0px;
 
+}
+header#cabecalhoartigo h3{
+    font-size: 12px;
+    color:#606060;
+}
+.direita{
+    text-align: right;
+}
 p{
     text-align: justify;
     text-indent: 50px;
@@ -163,9 +184,24 @@ span{
 
 #lateral{
     display: block;
-    width: 300px;
+    width: 315px;
     float: right;
-    padding-left: 10px;
+    padding: 10px;
+    margin-left: 0px;
+    background-color: #88888862;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.295);
+}
+#lateral h1{
+    margin-top: 0px;
+    font-family: 'FonteLogo';
+    font-size: 20pt;
+    color: #606060;
+}
+#lateral h2{
+    background-color: #606060;
+    font-size: 13pt;
+    color: #ffffff;
+    padding: 10px;
 }
 #rodape{
     clear: both;
@@ -173,4 +209,19 @@ span{
     text-align: center;
     padding-top: 10px;
     font-weight: 700;
+}
+#noticiaprincipal h2{
+  font-size: 13pt;
+  color: #606060;
+  background-color: #dddddd;
+  padding: 5px 0px 5px 10px; 
+  margin: 10px 0px 10px 0px; 
+}
+a{
+    text-decoration: none;
+    color: #cecece;
+}
+a:hover{
+    text-decoration: underline;
+    color: aqua;
 }
