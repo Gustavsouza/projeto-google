@@ -13,6 +13,11 @@
     function mudafoto(foto){
         document.getElementById('icone').src = foto;
     }
+    function calc_total(){
+        var qtd = Number(document.getElementById('cQtd').value)
+        tot = qtd*1500;
+        document.getElementById('cTot').value = tot;
+    }
 </script>
 <body>
     <div id="interface">
@@ -46,35 +51,87 @@
                      <h3 class="direita">Atualizado em 01/Maio/2013</h3>
             </hgroup>
         </header>  
-[AQUI ENTRA UMA FOTO]
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
-
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
-
-
-[BOTÃO ENVIAR]
+<form  method="post" id="fcontato" action="" oninput="calc_total();">
+    <fieldset id="usuario">
+        <legend>Identificação do Usuário</legend>
+            <p><label for="cNome">Nome:</label> <input type="text" id="cNome" name="tNome" placeholder="Nome completo" size="20" maxlength="30"></p> 
+            <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" placeholder="Senha com 12 digitos" size="15" maxlength="12"> </p>
+            <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" maxlength="30" size="30" placeholder="exemplo@outlook.com"> </p>
+            <fieldset id="sexo">
+                <legend><label for="tSexo">Sexo:</label></legend>
+                    <input type="radio" name="tSexo" id="cMasc"><label for="cMasc">Masculino</label> <br>
+                    <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label>
+            </fieldset>
+            <p><label for="cData">Data de Nascimento:</label> <input type="date" name="tdata" id="cData"></p>
+    </fieldset>
+    
+    <fieldset id="endereco">
+        <legend>Endereço do Usuário</legend>
+            <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" placeholder="Rua, Av, Travessa e etc..."> </p> 
+            <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="99999"> </p>
+            <p><label for="cEst">Estado:</label> <select name="tEst" id="cEst"> 
+               <optgroup label="Região Norte">
+                   <option value="">Acre</option>
+                   <option value="">Amapá </option>
+                   <option value="">Amazonas</option>
+               </optgroup>
+               <optgroup label="Nordeste">
+                   <option value="">Alagoas</option>
+                   <option value="">Bahia</option>
+                   <option value="">Ceará </option>
+               </optgroup>
+               <optgroup label="Centro-Oeste">
+                   <option value="">Goiás</option>
+                   <option value="">Mato Grosso </option>
+                   <option value="">Mato Grosso do Sul </option>
+               </optgroup>
+               <optgroup label="Sudeste">
+                   <option value="">Espírito Santo </option>
+                   <option value="">Minas Gerais </option>
+                   <option value="">Rio de Janeiro </option>
+               </optgroup>
+               <optgroup label="Região Sul">
+                   <option value="">Paraná </option>
+                   <option value="">Rio Grande do Sul</option>
+                   <option value="">Santa Catarina </option>
+               </optgroup>
+            </select> </p>
+            <p><label for="cCid">Cidade:</label>  <input type="text" name="tCid" id="cCid"  maxlength="30" placeholder="Cidade"  list="cidades"> </p>
+            <datalist id="cidades">
+                <option value="Rio Branco"></option>
+                <option value="Macapá"></option>
+                <option value="Manaus"></option>
+                <option value="Maceió"></option>
+                <option value="Salvador"></option>
+                <option value="Fortaleza"></option>
+                <option value=" Goiânia"></option>
+                <option value="Cuiabá"></option>
+                <option value="Campo Grande"></option>
+                <option value=" Vitória"></option>
+                <option value="Belo Horizonte"></option>
+                <option value="Rio de Janeiro"></option>
+                <option value="Curitiba"></option>
+                <option value="Porto Alegre"></option>
+                <option value="Florianópolis"></option>
+            </datalist>
+    </fieldset>
+    
+    <fieldset id="mensagem" >
+        <legend>Mensagem do Usuário</legend>
+            <p><label for="cUrg">Grau de Urgência:</label> Min<input type="range" name="tUrg" id="cUrg" min="1" max="10" step="1">Max</p>
+            <p><label for="cMsg">Mensagem:</label> <textarea name="tMsg" id="cMsg" cols="30" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+    </fieldset>
+    
+    <fieldset id="pedido">
+        <legend>Quero um Google Glass</legend>
+            <p><label for="cPed"> <input type="checkbox" name="tPed" id="cPed"> Gostaria de adquirir um Google Glass quando disponível</label></p>
+            <p><label for="cCor">Cor: <input type="color" name="tCor" id="cCor"></label></p>
+            <p><label for="cQtd">Quantidade: <input type="number" name="tQtd" id="cQtd"></label></p>
+            <p><label for="cTot">Preço Total: R$</label> <input type="text"  name="tTot" id="cTot" readonly placeholder="Valor final"></p>
+    </fieldset>
+        <input type="image" src="projeto-glass-html5/_imagens/botao-enviar.png" name="tEnviar" id="cEnviar">
+</form>
 
 </aside>
 </section>
